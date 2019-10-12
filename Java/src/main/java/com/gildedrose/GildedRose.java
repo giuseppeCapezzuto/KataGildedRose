@@ -11,7 +11,7 @@ class GildedRose {
     public void updateQuality() {
         ItemTypeFactory itemTypeFactory = new ItemTypeFactory();
         for (Item item : items) {
-            ItemType itemType = itemTypeFactory.getItemType(item.name);
+            ItemType itemType = itemTypeFactory.getItemType(item.getName());
             itemType.updateItem(item);
         }
     }

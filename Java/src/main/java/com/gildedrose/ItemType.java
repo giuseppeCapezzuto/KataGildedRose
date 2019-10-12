@@ -14,20 +14,20 @@ abstract class ItemType {
     protected void updateItem(Item item) {
         updateQuality(item);
         updateSellIn(item);
-        if (item.sellIn < 0) {
+        if (item.getSellIn() < 0) {
             updateQualityIfExpired(item);
         }
     }
 
     protected void incrementQuality(Item item) {
-        if (item.quality < MAX_QUALITY_VALUE) {
-            item.quality++;
+        if (item.getQuality() < MAX_QUALITY_VALUE) {
+            item.incrementQuality();
         }
     }
 
     protected void decrementQuality(Item item) {
-        if (item.quality > MIN_QUALITY_VALUE) {
-            item.quality--;
+        if (item.getQuality() > MIN_QUALITY_VALUE) {
+            item.decrementQuality();
         }
     }
 }

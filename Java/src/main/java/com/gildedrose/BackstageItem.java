@@ -7,22 +7,22 @@ class BackstageItem extends ItemType {
     @Override
     protected void updateQuality(Item item) {
         incrementQuality(item);
-        if (item.sellIn < 11) {
+        if (item.getSellIn() < 11) {
             incrementQuality(item);
         }
-        if (item.sellIn < 6) {
+        if (item.getSellIn() < 6) {
             incrementQuality(item);
         }
     }
 
     @Override
     protected void updateQualityIfExpired(Item item) {
-        item.quality = MIN_QUALITY_VALUE;
+        item.setQuality(MIN_QUALITY_VALUE);
     }
 
     @Override
     protected void updateSellIn(Item item) {
-        item.sellIn--;
+        item.decrementSellIn();
     }
 
 }

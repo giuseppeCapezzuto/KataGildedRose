@@ -14,7 +14,7 @@ package com.gildedrose;
 
         @Override
         protected void updateSellIn(Item item) {
-            item.sellIn--;
+            item.decrementSellIn();
         }
 
     }
